@@ -1,0 +1,58 @@
+<html>   
+   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task-13</title>
+    <style>
+        #start{
+            margin-top: 250px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>   
+     
+   <body>   
+    <img src="train.png" id='i1' style="position:absolute; left: 50; top: 100;">
+    <br><br><br><br>
+        <input type=button id="start" onClick=timer() value='Start'>
+        <input type=button id="stop" onClick=reset1() value='Stop'>
+    
+    <div id='msg'></div>
+    <script language='JavaScript' type='text/JavaScript'>
+        var dir='right';
+        
+        function reset1(){
+        clearTimeout(my_time);
+        document.getElementById('i1').style.left= "500px";
+        document.getElementById('i1').style.top= "100px";
+        document.getElementById("msg").innerHTML="";
+        }
+        
+        function disp(){
+        var step=5;
+        
+        var y=document.getElementById('i1').offsetTop;
+        var x=document.getElementById('i1').offsetLeft;
+        if(x >= 1000 ){
+        dir = 'left';
+        }
+        if(x <= 50 ){
+        dir = 'right';
+        }
+        
+        if(dir=='right'){x= x +step;}
+        else{x=x - step;}
+        document.getElementById('i1').style.left= x + "px";
+        }
+        function timer(){
+        disp();
+        var y=document.getElementById('i1').offsetTop;
+        var x=document.getElementById('i1').offsetLeft;
+        document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
+        my_time=setTimeout('timer()',10);
+        }
+        </script>
+   </body>  
+     
+</html> 
+
+ 

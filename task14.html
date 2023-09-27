@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url(pink.avif);
+        }
+        #Female{
+            margin-left: 107px;
+        }
+        #box{
+            margin-left: 20px;
+        }
+        #login{
+            margin-left: 250px;
+        }
+    </style>
+    <title>Task-14</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container col-12">
+        <form onsubmit="return check()" novalidate >
+            <label class="px-4 my-2" for="fname">First Name</label>
+            <input type="text" name="fname" id="fname" class="input" required >
+            <div id="cfname" class="emsg"></div> 
+
+            <label class="px-4 my-2" for="lname">Last Name</label>
+            <input type="text" name="lname" id="lname" class="input" required >
+            <div id="clname" class="emsg"></div> 
+           
+            <label class="px-4 my-2" for="femail">Email</label>
+            <input type="text" name="femail" id="femail" class="input" required >
+            <div id="cemail" class="emsg"></div>
+
+            <label class="px-4 my-2" for="pswd">Password</label>
+            <input type="text" name="pswd" id="pswd" class="input" required >
+            <div id="cpswd" class="emsg"></div> 
+
+            <label class="px-4 my-2" for="lname">Re-enter Password</label>
+            <input type="text" name="lname" id="lname" class="input" required >
+            <div id="crpswd" class="emsg"></div> 
+
+            <label class="px-4 my-2" for="gender">Gender:</label>
+            <input type="radio" name="gender"/>Male<br/>
+            <input type="radio" name="gender" id="Female" class="input"/>Female<br/>
+                   
+            <label class="px-4 my-2" for="fage">Age</label>
+            <input type="number" name="fage" id="fage" required class="input">
+            <div id="cage" class="emsg"></div>
+            
+            <label class="px-4 my-2" for="fphone">Phone Number</label>
+            <input type="number" name="fphone" id="fphone" required class="input">
+            <div id="cphone" class="emsg"></div> 
+            
+            <label class="px-4 my-2" for="faddress">Address</label>
+            <textarea type="text" name="faddress" id="faddress" required class="input"></textarea>
+            <div id="caddress" class="emsg"></div> 
+
+            <label class="px-4 my-2" for="fstate">State</label>
+            <input type="number" name="fstate" id="fstate" required class="input">
+            <div id="cphone" class="emsg"></div> 
+
+            <label class="px-4 my-2 for="language">Country</label>
+            <select name="Language" id="language">
+                <option>Choose Your Country</option>
+                <option>India</option>
+                <option>Australia</option>
+                <option>USA</option>
+            </select><br/>
+
+            <label class="px-4 my-2">Languages Known</label>
+            <input type="radio" />English
+            <input type="radio" />Kannada
+            <input type="radio" />Hindi
+            <input type="radio" />Telugu<br/>
+
+            <input type="checkbox" id="box">
+            <label for="vehicle1" id="remember">I hereby declare all the given details are true</label>
+            <br/>
+
+            <p id="login">Login in to <a href="#">Ethnus</a> website</p>
+            <input type="submit" value="Register">
+
+    
+          </form>
+    </div>
+
+      <script>
+        function check () {
+          var valid = true, error = "", field = "";
+        
+          field = document.getElementById("fname");
+          error = document.getElementById("cfname");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+
+          field = document.getElementById("lname");
+          error = document.getElementById("clname");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+        
+          
+          field = document.getElementById("femail");
+          error = document.getElementById("cemail");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+
+          field = document.getElementById("fpswd");
+          error = document.getElementById("cpswd");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+        
+          field = document.getElementById("frpswd");
+          error = document.getElementById("crpswd");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR OR MISMATCH";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+          return valid;
+        }
+        field = document.getElementById("fage");
+          error = document.getElementById("cage");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+          field = document.getElementById("fphone");
+          error = document.getElementById("cphone");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+          field = document.getElementById("fstate");
+          error = document.getElementById("cstate");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+          field = document.getElementById("faddress");
+          error = document.getElementById("caddress");
+          if (!field.checkValidity()) {
+            valid = false;
+            field.classList.add("err");
+            error.innerHTML = "POOR";
+          } else {
+            field.classList.remove("err");
+            error.innerHTML = "";
+          }
+        </script>
+</body>
+</html>
